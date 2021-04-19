@@ -1,6 +1,9 @@
-import {Schema, model} from 'mongoose';
+import {
+    Schema,
+    model
+} from 'mongoose';
 
-const productSchema = new Schema ({
+const productSchema = new Schema({
     name: String,
     category: String,
     price: Number,
@@ -10,4 +13,4 @@ const productSchema = new Schema ({
     versionKey: false
 })
 
-export default model('Products',productSchema);
+export default model('Products', productSchema);

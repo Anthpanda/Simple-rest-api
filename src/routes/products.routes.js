@@ -6,13 +6,10 @@ router.post('/', productsCtrl.createProducts);
 
 router.get('/', productsCtrl.getsProducts);
 
-router.get('/:productsId', productsCtrl.getsProductById);
+router.get('/:productId', productsCtrl.getsProductById);
 
-router.put('/:productsId', productsCtrl.UpdateProductById);
+router.put('/:productId', productsCtrl.UpdateProductById);
 
-router.delete('/:productsId', productsCtrl.DeleteProductById);
-
-
-
+router.delete('/:productId', productsCtrl.DeleteProductById);
 
 export default router;

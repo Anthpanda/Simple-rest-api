@@ -16,15 +16,24 @@ export const getsProducts = async (req, res) => {
   res.json(products);
 };
 
-export const getsProductById = (req, res) => {
+export const getsProductById = async (req, res) => {
+   const product = await Product.findById(req.params.productId);
+   res.status(200).json(product);
 
 };
 
-export const UpdateProductById = (req, res) => {
+export const UpdateProductById = async (req, res) => {
+   const updateProduct =  await Product.findByIdAndUpdate(req.params.productId, req.body, {
+       new:true
+   });
+
+   res.status(200).json(updateProduct);
 
 };
 
-export const DeleteProductById = (req, res) => {
-
+export const DeleteProductById = async (req, res) => {
+    const {productId} = req.params;
+    await Product.findByIdAndDelete(productId);
+    res.status(204).json();
 };
 
