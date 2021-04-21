@@ -11,12 +11,58 @@
 				{
 					"name": "/products",
 					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/products/:productId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/products/607dafe39e1fdf4514afe71d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"products",
+								"607dafe39e1fdf4514afe71d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/products",
+					"request": {
 						"method": "POST",
 						"header": [
 							{
 								"key": "Content-Type",
 								"name": "Content-Type",
 								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwN2RkYmQ3MmMyYTM2MjJlMGNkZjMxMiIsImlhdCI6MTYxODkyNjg3MiwiZXhwIjoxNjE5MDEzMjcyfQ.Ymgr0jBfdTQwEnc1dShESVEERfnbGZG_e0b6_2m8hJc",
 								"type": "text"
 							}
 						],
@@ -30,13 +76,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/products",
+							"raw": "http://localhost:4000/api/products",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "4000",
 							"path": [
+								"api",
 								"products"
 							]
 						}
@@ -44,19 +91,194 @@
 					"response": []
 				},
 				{
-					"name": "/products",
+					"name": "/products/:productId",
 					"request": {
-						"method": "GET",
-						"header": [],
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"laptop lenovo thinkpad T 400\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "http://localhost:4000/products",
+							"raw": "http://localhost:4000/api/products/607dafe39e1fdf4514afe71d",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "4000",
 							"path": [
-								"products"
+								"api",
+								"products",
+								"607dafe39e1fdf4514afe71d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/products/:productId",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwN2YxMTE5Y2NhOWVmNDBmMGE2ZjQzNyIsImlhdCI6MTYxODk0MDE4NSwiZXhwIjoxNjE5MDI2NTg1fQ.PDXVaxKH1N6bWPjV6F-khhXPYwM2JabsH5Hom8shPqk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/products/607dafe39e1fdf4514afe71d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"products",
+								"607dafe39e1fdf4514afe71d"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "/api/auth/singup",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"Joen mac\",\n\t\"email\": \"Joen@google.com\",\n\t\"password\": \"password\",\n\t\"roles\" : [\n\t\t\"admin\",\n\t\t\"moderador\"\n\t\t]\n\t\n}"
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/auth/singup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"auth",
+								"singup"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/auth/singin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"Joen@google.com\",\n\t\"password\": \"password\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/auth/singin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"auth",
+								"singin"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "/users",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwN2YxNjIxN2IxYzYzNWNmMDJhMzJhZCIsImlhdCI6MTYxODk0MTQ3MywiZXhwIjoxNjE5MDI3ODczfQ.Vx7M6tq1C3xNaYuow2BHoz_6QY_zmPwSd4PQ8hkAFzg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"Anthony\",\n\t\"email\": \"Anthony@google.com\",\n\t\"password\": \"password\",\n\t\"roles\" : [\n\t\t\"admin\",\n\t\t\"moderador\",\n\t\t\"Super admin\",\n\t\t\"Best\"\n\t\t]\n\t\n}"
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"user"
 							]
 						}
 					},
